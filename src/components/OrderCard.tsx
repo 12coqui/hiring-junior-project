@@ -29,7 +29,7 @@ function OrderCard({
   const navigate = useNavigate();
 
   function handleEdit(id: string) {
-    navigate(`/form?id=${id}`);
+    navigate(`/order?id=${id}`);
   }
 
   function handleDelete(id: string) {
