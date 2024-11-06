@@ -18,7 +18,7 @@ function Navbar() {
           </Link>
         </li>
         <li className={styles.navItem}>
-          <Link to="/form" className={styles.navLink}>
+          <Link to="/order" className={styles.navLink}>
             <span>
               <PlusSquare />
             </span>

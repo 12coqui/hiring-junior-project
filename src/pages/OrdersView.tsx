@@ -3,7 +3,7 @@ import { OrderContext } from "../components/context/OrdersContext.tsx";
 import OrderCard from "../components/OrderCard.tsx";
 import styles from "../styles/OrderView.module.css";
 
-function OrderView() {
+function OrdersView() {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const { orders } = useContext(OrderContext);
@@ -15,17 +15,17 @@ function OrderView() {
 
   const totalPages = Math.ceil(filteredOrders.length / itemsPerPage);
 
-  const handleNextPage = () => {
+  function handleNextPage() {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-  };
+  }
 
-  const handlePreviousPage = () => {
+  function handlePreviousPage() {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  };
+  }
 
   useEffect(() => {
     if (status === "all") {
@@ -124,4 +124,4 @@ function OrderView() {
   );
 }
 
-export default OrderView;
+export default OrdersView;

@@ -1,7 +1,15 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/Form.module.css";
+
+const formStyles = {
+  formGroup: styles.formGroup,
+  label: styles.label,
+  input: styles.input,
+};
+
 import { OrderContext } from "../components/context/OrdersContext";
+import Input from "../components/Input";
 
 function Form() {
   const { orders, setOrders } = useContext(OrderContext);
@@ -63,42 +71,28 @@ function Form() {
   return (
     <div className={styles.formWrapper}>
       <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>
-            Customer Name:
-            <input
-              type="text"
-              value={customerName}
-              onChange={(e) => setCustomerName(e.target.value)}
-              className={styles.input}
-              required
-            />
-          </label>
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>
-            Item:
-            <input
-              type="text"
-              value={item}
-              onChange={(e) => setItem(e.target.value)}
-              className={styles.input}
-              required
-            />
-          </label>
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label}>
-            Quantity:
-            <input
-              type="number"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-              className={styles.input}
-              required
-            />
-          </label>
-        </div>
+        <Input
+          label="Customer Name:"
+          customerName={customerName}
+          setCustomerName={setCustomerName}
+          styles={formStyles}
+          type="text"
+        />
+        <Input
+          label="Item:"
+          customerName={item}
+          setCustomerName={setItem}
+          styles={formStyles}
+          type="text"
+        />
+        <Input
+          label="Quantity:"
+          customerName={quantity}
+          setCustomerName={setQuantity}
+          styles={formStyles}
+          type="number"
+        />
+
         <div className={styles.formGroup}>
           <label className={styles.label}>
             Status:
