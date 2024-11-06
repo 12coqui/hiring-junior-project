@@ -1,0 +1,145 @@
+@import "./variables.css";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  min-height: 100vh;
+  flex-direction: column;
+  width: 90%;
+  gap: 1rem;
+  margin: 2rem auto;
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  width: 100%;
+  gap: 2rem;
+}
+
+.item {
+  background-color: rgba(0, 0, 70, 0.9);
+  opacity: 0.9;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.item div span:nth-child(even) {
+  text-transform: capitalize;
+}
+.item div span:nth-child(odd) {
+  font-weight: bold;
+}
+
+.delete,
+.edit {
+  position: absolute;
+
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  height: 40px;
+  width: 40px;
+}
+
+.delete {
+  right: 1rem;
+  top: 0;
+  transform: translateX(50%);
+}
+
+.edit {
+  right: 1rem;
+  bottom: 0;
+  transform: translateX(50%);
+}
+
+.show {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.next,
+.previous {
+  background: rgba(0, 0, 70, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputGroup {
+  height: 40px;
+  display: flex;
+  justify-content: start;
+  width: max-content;
+  text-align: left;
+  gap: 1rem;
+  background-color: var(--primary-color);
+  color: aliceblue;
+  padding: 10px;
+}
+
+.inputGroup input[type="number"] {
+  text-align: center;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+.inputGroup input[type="radio"] {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
+label {
+  font-size: 1.15rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .list {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .show {
+    margin: auto 0 0 0;
+  }
+}
