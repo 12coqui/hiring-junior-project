@@ -1,16 +1,17 @@
 :root {
-	--primary-color: rgba(0, 0, 70, 1);
-	--secondary-color: rgba(0, 0, 70, 0.8);
-	--cancelled: #ff0000;
-	--completed: #00ff00;
-	--pending: #ffcc00;
-	/* box shadow pallette */
-	--shadow-color: 240deg 100% 3%;
-	--shadow-elevation-low: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),
-		0px 4.2px 3.2px -5px hsl(var(--shadow-color) / 0.63);
-	--shadow-elevation-medium: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),
-		-0.2px 21px 15.8px -5px hsl(var(--shadow-color) / 0.88);
-	--shadow-elevation-high: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),
-		0px 5.2px 3.9px -1.7px hsl(var(--shadow-color) / 1), -0.3px 34.7px 26px -3.3px hsl(var(--shadow-color) / 0.82),
-		-1.1px 114.7px 86px -5px hsl(var(--shadow-color) / 0.41);
+  --primary-color: rgba(0, 0, 70, 1);
+  --secondary-color: rgba(0, 0, 70, 0.8);
+  --cancelled: #ff0000;
+  --completed: #00ff00;
+  --pending: #ffcc00;
+  /* box shadow pallette */
+  --shadow-color: 240deg 100% 3%;
+  --shadow-elevation-low: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),
+    0px 4.2px 3.2px -5px hsl(var(--shadow-color) / 0.63);
+  --shadow-elevation-medium: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),
+    -0.2px 21px 15.8px -5px hsl(var(--shadow-color) / 0.88);
+  --shadow-elevation-high: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),
+    0px 5.2px 3.9px -1.7px hsl(var(--shadow-color) / 1),
+    -0.3px 34.7px 26px -3.3px hsl(var(--shadow-color) / 0.82),
+    -1.1px 114.7px 86px -5px hsl(var(--shadow-color) / 0.41);
 }

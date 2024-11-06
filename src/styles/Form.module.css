@@ -1,52 +1,52 @@
-@import './variables.css';
+@import "./variables.css";
 .formWrapper {
-	max-width: 600px;
-	margin: 3rem auto;
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	background: white;
-	opacity: 0.85;
-	color: black;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  opacity: 0.85;
+  color: black;
 }
 
 .formGroup {
-	margin-bottom: 15px;
-	display: flex;
-	width: 100%;
-	text-align: left;
+  margin-bottom: 15px;
+  display: flex;
+  width: 100%;
+  text-align: left;
 }
 
 .label {
-	display: block;
-	width: 100%;
-	font-size: 1.15rem;
-	margin-bottom: 5px;
-	font-weight: bold;
-	margin-right: auto;
+  display: block;
+  width: 100%;
+  font-size: 1.15rem;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-right: auto;
 }
 
 .input {
-	opacity: 1;
-	width: 100%;
-	padding: 8px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	background-color: white;
-	color: black;
-	font-size: 1rem;
-	font-weight: 400;
+  opacity: 1;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .button {
-	padding: 10px 15px;
-	background-color: #007bff;
-	color: white;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .button:hover {
-	background-color: #0056b3;
+  background-color: #0056b3;
 }
