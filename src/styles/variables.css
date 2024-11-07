@@ -1,9 +1,9 @@
 :root {
   --primary-color: rgba(0, 0, 70, 1);
   --secondary-color: rgba(0, 0, 70, 0.8);
-  --cancelled: #ff0000;
-  --completed: #00ff00;
-  --pending: #ffcc00;
+  --cancelled: hsl(0, 70%, 50%);
+  --completed: hsl(120, 70%, 50%);
+  --pending: hsl(60, 100%, 50%);
   /* box shadow pallette */
   --shadow-color: 240deg 100% 3%;
   --shadow-elevation-low: 0px 0.9px 0.7px hsl(var(--shadow-color) / 1),

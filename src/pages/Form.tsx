@@ -17,6 +17,7 @@ function Form() {
   const [item, setItem] = useState("");
   const [quantity, setQuantity] = useState("");
   const [status, setStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const queryParam = new URLSearchParams(window.location.search);
   const id = queryParam.get("id");
@@ -30,46 +31,59 @@ function Form() {
         setQuantity(order.quantity);
         setStatus(order.status);
       }
+    } else {
+      setCustomerName("");
+      setItem("");
+      setQuantity("");
+      setStatus("");
     }
   }, [id, orders]);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!id) {
-      setOrders((prev: any[]) => [
-        {
-          id: crypto.randomUUID(),
-          customerName,
-          item,
-          quantity: Number(quantity),
-          status,
-          date: new Date().toLocaleDateString(),
-          time: new Date().toLocaleTimeString(),
-        },
-        ...prev,
-      ]);
-      navigate("/");
-      return;
-    }
-    const updatedOrders = orders.map((order: any) => {
-      if (order.id === id) {
-        return {
-          ...order,
-          customerName,
-          item,
-          quantity: Number(quantity),
-          status,
-        };
+    setIsLoading(true);
+    setTimeout(() => {
+      if (!id) {
+        setOrders((prev: any[]) => [
+          {
+            id: crypto.randomUUID(),
+            customerName,
+            item,
+            quantity: Number(quantity),
+            status,
+            date: new Date().toLocaleDateString(),
+            time: new Date().toLocaleTimeString(),
+          },
+          ...prev,
+        ]);
+        navigate("/");
+        return;
       }
-      return order;
-    });
-    setOrders(updatedOrders);
-
-    navigate("/");
+      const updatedOrders = orders.map((order: any) => {
+        if (order.id === id) {
+          return {
+            ...order,
+            customerName,
+            item,
+            quantity: Number(quantity),
+            status,
+          };
+        }
+        return order;
+      });
+      setIsLoading(false);
+      setOrders(updatedOrders);
+      navigate("/");
+    }, 4000);
   }
 
   return (
     <div className={styles.formWrapper}>
+      {isLoading && (
+        <div className={styles.spinnerContainer}>
+          <div className={styles.spinner}></div>
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <Input
           label="Customer Name:"
