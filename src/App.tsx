@@ -16,7 +16,8 @@ function App() {
           <Route path="/order" element={<Form />} />
         </Routes>
       </Router>
-      <img src="./src/assets/grocery_bg.png" alt="grocery" className="bg" />
+      <div />
+      {/* <img src="./src/assets/grocery_bg.png" alt="grocery" className="bg" /> */}
     </OrdersContext>
   );
 }
