@@ -1,12 +1,13 @@
 import { useState, useContext, useEffect } from "react";
 import { OrderContext } from "../components/context/OrdersContext.tsx";
 import OrderCard from "../components/OrderCard.tsx";
+import OrderViewFilters from "../components/OrderViewFilters";
 import styles from "../styles/OrderView.module.css";
 
 function OrdersView() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
   const { orders } = useContext(OrderContext);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [status, setStatus] = useState("all");
   const [filteredOrders, setFilteredOrders] = useState(orders);
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -38,63 +39,12 @@ function OrdersView() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.actions}>
-        <div className={styles.inputGroup}>
-          <label htmlFor="all">
-            All:
-            <input
-              type="radio"
-              name="status"
-              id="all"
-              onChange={(e) => setStatus(e.target.id)}
-              checked={status === "all"}
-            />
-          </label>
-          <label htmlFor="pending">
-            Pending:
-            <input
-              type="radio"
-              name="status"
-              id="pending"
-              onChange={(e) => setStatus(e.target.id)}
-              checked={status === "pending"}
-            />
-          </label>
-          <label htmlFor="completed">
-            Completed:
-            <input
-              type="radio"
-              name="status"
-              id="completed"
-              onChange={(e) => setStatus(e.target.id)}
-              checked={status === "completed"}
-            />
-          </label>
-          <label htmlFor="cancelled">
-            Cancelled:
-            <input
-              type="radio"
-              name="status"
-              id="cancelled"
-              onChange={(e) => setStatus(e.target.id)}
-              checked={status === "cancelled"}
-            />
-          </label>
-        </div>
-        <div className={styles.inputGroup}>
-          <label htmlFor="number_of_items">
-            {" "}
-            Number of items per page:
-            <input
-              type="number"
-              value={itemsPerPage}
-              onChange={(e) => setItemsPerPage(Number(e.target.value))}
-              min={1}
-              max={10}
-            />
-          </label>
-        </div>
-      </div>
+      <OrderViewFilters
+        itemsPerPage={itemsPerPage}
+        setItemsPerPage={setItemsPerPage}
+        setStatus={setStatus}
+        status={status}
+      />
       <ul className={styles.list}>
         {currentOrders.map((order: any) => (
           <OrderCard key={order.id} {...order} />

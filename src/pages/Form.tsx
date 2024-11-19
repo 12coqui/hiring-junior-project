@@ -31,6 +31,11 @@ function Form() {
         setQuantity(order.quantity);
         setStatus(order.status);
       }
+    } else {
+      setCustomerName("");
+      setItem("");
+      setQuantity("");
+      setStatus("");
     }
   }, [id, orders]);
 
